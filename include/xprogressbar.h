@@ -28,6 +28,7 @@ class XProgressBar : public QProgressBar
 
 {
     Q_OBJECT
+    Q_PROPERTY(QBrush valueBrush READ getValueBrush WRITE setValueBrush)
     Q_PROPERTY(QColor valueColor READ getValueColor WRITE setValueColor)
     Q_PROPERTY(QColor bgColor READ getBgColor WRITE setBgColor)
     Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor)
@@ -62,6 +63,7 @@ private:
     QColor borderColor;         //边框颜色    
 
 public:
+    QBrush getValueBrush()      const;
     QColor getValueColor()      const;
     QColor getBgColor()         const;
     QColor getTextColor()       const;

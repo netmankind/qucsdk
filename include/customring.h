@@ -2,8 +2,7 @@
 #define CUSTOMRING_H
 
 /**
- * 自定义环形图控件 整理:feiyangqingyun(QQ:517216493) 2019-7-28
- * 原作者:雨田哥(QQ:3246214072)
+ * 自定义环形图控件 作者:雨田哥(QQ:3246214072) 整理:feiyangqingyun(QQ:517216493) 2019-7-28
  * 1:可设置是否显示标题+标题文字+标题高度+标题字号
  * 2:可设置是否显示图例+图例高度+图例字号
  * 3:可设置背景颜色+文字颜色+高亮颜色+标识颜色
@@ -12,6 +11,8 @@
  * 6:鼠标悬停突出显示区域并高亮显示文字
  * 7:每个区域都可设置对应的颜色+文字描述+百分比
  * 8:支持直接字符串设置文字集合和百分比集合
+ * 9:可设置悬停的偏移值即往外突出多少像素
+ * 10:可设置悬停突出的颜色透明度
  */
 
 #include <QWidget>
@@ -38,6 +39,9 @@ class CustomRing : public QWidget
     Q_PROPERTY(bool showLegend READ getShowLegend WRITE setShowLegend)
     Q_PROPERTY(int legendHeight READ getLegendHeight WRITE setLegendHeight)
     Q_PROPERTY(int legendFontSize READ getLegendFontSize WRITE setLegendFontSize)
+
+    Q_PROPERTY(int hoverOffset READ getHoverOffset WRITE setHoverOffset)
+    Q_PROPERTY(int hoverAlpha READ getHoverAlpha WRITE setHoverAlpha)
 
     Q_PROPERTY(QColor bgColor READ getBgColor WRITE setBgColor)
     Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor)
@@ -93,6 +97,9 @@ private:
     int legendHeight;           //图例高度
     int legendFontSize;         //图例字号
 
+    int hoverOffset;            //悬停偏移值
+    int hoverAlpha;             //悬停透明度
+
     QColor bgColor;             //背景颜色
     QColor textColor;           //文字颜色
     QColor highColor;           //高亮颜色
@@ -120,6 +127,9 @@ public:
     int getLegendHeight()       const;
     int getLegendFontSize()     const;
 
+    int getHoverOffset()        const;
+    int getHoverAlpha()         const;
+
     QColor getBgColor()         const;
     QColor getTextColor()       const;
     QColor getHighColor()       const;
@@ -146,6 +156,10 @@ public Q_SLOTS:
     void setShowLegend(bool showLegend);
     void setLegendHeight(int legendHeight);
     void setLegendFontSize(int legendFontSize);
+
+    //设置鼠标悬停偏移值+颜色透明度
+    void setHoverOffset(int hoverOffset);
+    void setHoverAlpha(int hoverAlpha);
 
     //设置背景颜色+文字颜色+高亮颜色+标识颜色
     void setBgColor(const QColor &bgColor);

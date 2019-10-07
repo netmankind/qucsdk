@@ -93,6 +93,9 @@ HEADERS += \
     $$PWD/progressthree.h \
     $$PWD/progressplay.h \
     $$PWD/progressring.h \
+    $$PWD/progressarc.h \
+    $$PWD/progressshadow.h \
+    $$PWD/progresstip.h \
     $$PWD/roundcircle.h \
     $$PWD/roundwidget.h \
     $$PWD/roundlogo.h \
@@ -103,6 +106,9 @@ HEADERS += \
     $$PWD/rulerslider.h \
     $$PWD/rulertemp.h \
     $$PWD/rulerprogress.h \
+    $$PWD/scantantan.h \
+    $$PWD/shadowcalendar.h \
+    $$PWD/shadowclock.h \
     $$PWD/selectwidget.h \
     $$PWD/sliderrange.h \
     $$PWD/sliderselect.h \
@@ -124,6 +130,7 @@ HEADERS += \
     $$PWD/wavedouble.h \
     $$PWD/waveline.h \
     $$PWD/waveplot.h \
+    $$PWD/wavewater.h \
     $$PWD/xslider.h \
     $$PWD/xlistwidget.h \
     $$PWD/xlistwidgetvs.h \
@@ -134,6 +141,7 @@ HEADERS += \
     $$PWD/screenwidget.h \
     $$PWD/colorwidget.h \
     $$PWD/movewidget.h \
+    $$PWD/framelesswidget.h \
     $$PWD/zhtopy.h \
     $$PWD/pinyin.h \
     $$PWD/ntpclient.h \

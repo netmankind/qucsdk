@@ -11,6 +11,7 @@
  * 6:可设置外圆背景/内圆背景/饼圆三种颜色/刻度尺颜色/文字颜色
  * 7:自适应窗体拉伸,刻度尺和文字自动缩放
  * 8:可自由拓展各种渐变色,各圆的半径
+ * 9:可设置百分比模式,自动计算值换算成百分比
  */
 
 #include <QWidget>
@@ -47,6 +48,7 @@ class GaugePercent : public QWidget
     Q_PROPERTY(QColor baseColor READ getBaseColor WRITE setBaseColor)
     Q_PROPERTY(QColor bgColor READ getBgColor WRITE setBgColor)
 
+    Q_PROPERTY(bool percent READ getPercent WRITE setPercent)
     Q_PROPERTY(QString title READ getTitle WRITE setTitle)
 
 public:
@@ -81,6 +83,7 @@ private:
     QColor baseColor;               //基准颜色
     QColor bgColor;                 //背景颜色
 
+    bool percent;                   //百分比模式
     QString title;                  //标题
 
 public:
@@ -102,6 +105,7 @@ public:
     QColor getBaseColor()           const;
     QColor getBgColor()             const;
 
+    bool getPercent()               const;
     QString getTitle()              const;
 
     QSize sizeHint()                const;
@@ -147,6 +151,8 @@ public Q_SLOTS:
     //设置背景颜色
     void setBgColor(const QColor &bgColor);
 
+    //设置百分比模式
+    void setPercent(bool percent);
     //设置标题
     void setTitle(const QString &title);
 

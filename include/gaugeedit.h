@@ -14,6 +14,8 @@
  * 9:支持键盘上下键步长为1修改值
  * 10:支持上下翻页键步长为10修改值
  * 11:支持鼠标滚轮步长为1修改值
+ * 12:限定只能输入数字,支持小数位
+ * 13:数字大小自适应控件宽度变大变小
  */
 
 #include <QWidget>
@@ -67,6 +69,7 @@ protected:
 
 private slots:
     void initStyle();
+    void changeFont();
     void updateValue();
     void textChanged(const QString &value);
 
@@ -156,6 +159,7 @@ public Q_SLOTS:
     void setTextColor(const QColor &textColor);
 
 Q_SIGNALS:
+    void valueChanged(double value);
     void valueChanged(int value);
 };
 
